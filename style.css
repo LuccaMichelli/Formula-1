@@ -1,0 +1,226 @@
+/* estilos generales */
+body {
+    margin: 0;
+    background-color: #7884855b;
+}
+h1, h2, h3 {   
+    text-align: center;
+}
+h1 {
+    padding-top: 60px;
+}
+p {
+    padding: 15px;
+}
+/* BARRA DE NAVEGACION */
+.contenedorSuperior {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Estilo del nav con fondo transparente */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #00000581;
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilos del logo */
+.logo img {
+    width: 80px;
+    padding-left: 10px;
+}
+
+/* Lista del menú */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-right: 10px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+/* Enlaces */
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Efecto hover en los enlaces */
+.nav-links li a:hover {
+    color: red;
+}
+
+/* Submenú */
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+.submenu .dropdown li {
+    text-align: left;
+}
+
+.submenu .dropdown li a {
+    color: white;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.submenu .dropdown li a:hover {
+    background: red;
+}
+
+/* Mostrar submenú en hover */
+.submenu:hover .dropdown {
+    display: block;
+}
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+}
+.footer-contenido {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos para los enlaces */
+.icono {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilos individuales para cada red */
+.instagram:hover { color: #E4405F; transform: scale(1.1); }
+.facebook:hover { color: #1877F2; transform: scale(1.1); }
+.contacto:hover { color: #FFA500; transform: scale(1.1); }
+.whatsapp:hover { color: #25D366; transform: scale(1.1); }
+.barra:hover{color: #000000; transform: scale(1.1);}
+/* Íconos */
+.icono i {
+    margin-right: 8px;
+}
+/* PAGINA PRINCIPAL*/
+.contenedor {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+}
+.contededorInferior {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 450px;
+    }
+.contededorInferior p {
+    background-color: rgba(0, 0, 0, 0.581);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}
+.contededorInferiorBotones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.contenedor2 {
+    margin: 10px;
+}
+.imgContenedor {
+    width: 400px;
+}
+.imgCenter {
+    text-align: center;
+}
+/* botton */
+.btnI {
+    background-color: rgba(0, 0, 0, 0.581); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.5s ease, transform 0.2s ease;
+}
+button:hover {
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.95);
+}
+.header {
+    background-image: url(./img/senna1.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 95vh;
+    position: relative;
+    grid-area: header;
+}
+/*aside*/
+.aside {
+    grid-area: aside;
+    padding: 20px;
+    position: sticky;
+    top: 10px;  /* Fija el aside a 20px del top */
+    height: 400px;  /* Ajusta según lo necesario */
+}
+.imgAside {
+    width: 400px;
+    height: auto;
+    margin: 10px;
+}
+.main {
+    grid-area: main;
+}
+/* CIRCUITOS */
+.circuito {
+    display: grid;
+    grid-template-columns: repeat(3, 8fr);
+}
+.imgCircuito {
+    width: 400px;
+    height: auto;
+    margin: 20px;
+}
+.centrarImg {
+    text-align: center;
+    margin: 10px;
+}
+/* carrusel */
