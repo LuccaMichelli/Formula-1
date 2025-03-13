@@ -4,6 +4,7 @@ body {
     background-color: #7884855b;
 }
 h1, h2, h3 {   
+    padding-top: 10px;
     text-align: center;
 }
 h1 {
@@ -11,6 +12,8 @@ h1 {
 }
 p {
     padding: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 /* BARRA DE NAVEGACION */
 .contenedorSuperior {
@@ -224,3 +227,6 @@ button:active {
     margin: 10px;
 }
 /* carrusel */
+.carouselExampleIndicators {
+    width: 50%;
+}
