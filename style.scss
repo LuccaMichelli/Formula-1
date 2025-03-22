@@ -1,13 +1,23 @@
-@charset "UTF-8";
 /* Definir las variables */
+$font-main: 'Karla', sans-serif;
+$font-size: 16px;
+$primary-bg-color: #7884855b;
+$hover-color: red;
+$submenu-bg-color: rgba(0, 0, 0, 0.9);
+$footer-bg-color: #222;
+$footer-font-size: 18px;
+$icon-hover-scale: 1.1;
+$button-hover-scale: 1.05;
+$button-active-scale: 0.95;
+
 /* estilos generales */
 body {
-  font-family: "Karla", sans-serif;
+  font-family: $font-main;
   margin: 0;
-  background-color: rgba(120, 132, 133, 0.3568627451);
+  background-color: $primary-bg-color;
 }
 
-h1, h2, h3 {
+h1, h2, h3 {   
   padding-top: 10px;
   text-align: center;
 }
@@ -39,7 +49,7 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 5, 0.5058823529);
+  background-color: #00000581;
   backdrop-filter: blur(10px); /* Efecto borroso */
   display: flex;
   justify-content: space-between;
@@ -76,7 +86,7 @@ img {
 
 /* Efecto hover en los enlaces */
 .nav-links li a:hover {
-  color: red;
+  color: $hover-color;
 }
 
 /* Submenú */
@@ -85,7 +95,7 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: $submenu-bg-color;
   list-style: none;
   padding: 10px 0;
   border-radius: 5px;
@@ -104,7 +114,7 @@ img {
 }
 
 .submenu .dropdown li a:hover {
-  background: red;
+  background: $hover-color;
 }
 
 /* Mostrar submenú en hover */
@@ -115,11 +125,11 @@ img {
 /* FOOTER */
 .footer {
   grid-area: footer;
-  background-color: #222;
+  background-color: $footer-bg-color;
   color: white;
   text-align: center;
   padding: 20px 0;
-  font-size: 18px;
+  font-size: $footer-font-size;
   position: relative;
   z-index: 1;
 }
@@ -134,35 +144,16 @@ img {
 .icono {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: $font-size;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Estilos individuales para cada red */
-.instagram:hover {
-  color: #E4405F;
-  transform: scale(1.1);
-}
-
-.facebook:hover {
-  color: #1877F2;
-  transform: scale(1.1);
-}
-
-.contacto:hover {
-  color: #FFA500;
-  transform: scale(1.1);
-}
-
-.whatsapp:hover {
-  color: #25D366;
-  transform: scale(1.1);
-}
-
-.barra:hover {
-  color: #000000;
-  transform: scale(1.1);
-}
+.instagram:hover { color: #E4405F; transform: scale($icon-hover-scale); }
+.facebook:hover { color: #1877F2; transform: scale($icon-hover-scale); }
+.contacto:hover { color: #FFA500; transform: scale($icon-hover-scale); }
+.whatsapp:hover { color: #25D366; transform: scale($icon-hover-scale); }
+.barra:hover { color: #000000; transform: scale($icon-hover-scale); }
 
 /* Íconos */
 .icono i {
@@ -172,7 +163,10 @@ img {
 /* PAGINA PRINCIPAL */
 .contenedor {
   display: grid;
-  grid-template-areas: "header header header" "aside main main" "footer footer footer";
+  grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "footer footer footer";
 }
 
 .contededorInferior {
@@ -212,22 +206,22 @@ img {
 
 /* button */
 .btnI {
-  background-color: rgba(0, 0, 0, 0.581);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.581); 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 5px; 
   transition: background-color 0.5s ease, transform 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale($button-hover-scale);
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale($button-active-scale);
 }
 
 .header {
@@ -244,8 +238,8 @@ button:active {
   grid-area: aside;
   padding: 20px;
   position: sticky;
-  top: 10px; /* Fija el aside a 20px del top */
-  height: 400px; /* Ajusta según lo necesario */
+  top: 10px;  /* Fija el aside a 20px del top */
+  height: 400px;  /* Ajusta según lo necesario */
 }
 
 .imgAside {
