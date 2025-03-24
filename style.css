@@ -2,9 +2,9 @@
 /* Definir las variables */
 /* estilos generales */
 body {
-  font-family: "Karla", sans-serif;
+  font-family: "Karla", sans-serif !important;
   margin: 0;
-  background-color: rgba(120, 132, 133, 0.3568627451);
+  background-color: rgba(120, 132, 133, 0.3568627451) !important;
 }
 
 h1, h2, h3 {
@@ -57,7 +57,7 @@ img {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 20px !important;
   padding-right: 10px;
 }
 
@@ -212,6 +212,7 @@ img {
 
 /* button */
 .btnI {
+  font-family: "Karla", sans-serif !important;
   background-color: rgba(0, 0, 0, 0.581);
   color: white;
   border: none;
@@ -241,21 +242,28 @@ button:active {
 
 /* aside */
 .aside {
-  grid-area: aside;
-  padding: 20px;
-  position: sticky;
-  top: 10px; /* Fija el aside a 20px del top */
-  height: 400px; /* Ajusta según lo necesario */
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+  border-radius: 3px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .imgAside {
-  width: 400px;
-  height: auto;
-  margin: 10px;
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
 }
 
-.main {
-  grid-area: main;
+.asideText h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.readMore {
+  color: #e10600;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* CIRCUITOS */
@@ -285,3 +293,5 @@ button:active {
   margin: auto;
   width: 50%;
 }
+
+/*# sourceMappingURL=style.css.map */
