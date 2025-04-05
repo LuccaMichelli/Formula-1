@@ -3,12 +3,12 @@
 /* estilos generales */
 body {
   font-family: "Karla", sans-serif !important;
-  margin: 0;
+  margin: 0px;
   background-color: rgba(120, 132, 133, 0.3568627451) !important;
+  padding: 0px;
 }
 
 h1, h2, h3 {
-  padding-top: 10px;
   text-align: center;
 }
 
@@ -28,7 +28,7 @@ img {
 
 /* BARRA DE NAVEGACION */
 .contenedorSuperior {
-  padding: 10px;
+  padding: 10px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@ img {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 5, 0.5058823529);
-  backdrop-filter: blur(10px); /* Efecto borroso */
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,9 +69,11 @@ img {
 .nav-links li a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 18px !important;
+  padding: 10px !important;
+  padding-top: 10px !important;
   transition: color 0.3s ease-in-out;
+  text-transform: uppercase;
 }
 
 /* Efecto hover en los enlaces */
@@ -112,6 +114,101 @@ img {
   display: block;
 }
 
+/* Estilo para el botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-right: 15px;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 5, 0.8);
+    backdrop-filter: blur(10px);
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links li {
+    text-align: center;
+    width: 100%;
+  }
+  .submenu .dropdown {
+    position: static;
+    background: rgba(0, 0, 5, 0.8);
+    border-radius: 0;
+  }
+  .submenu:hover .dropdown {
+    display: none;
+  }
+  /* Submenú en modo acordeón: se abre al hacer clic */
+  .submenu.open .dropdown {
+    display: block;
+  }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: rgba(0, 0, 5, 0.8);
+    backdrop-filter: blur(10px);
+    margin-top: 10px;
+    gap: 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  .submenu .dropdown {
+    display: none;
+    position: static;
+    background-color: rgba(0, 0, 5, 0.8);
+  }
+  .submenu.open .dropdown {
+    display: block;
+  }
+  .submenu:hover .dropdown {
+    display: none;
+  }
+}
 /* FOOTER */
 .footer {
   grid-area: footer;
@@ -176,26 +273,24 @@ img {
 }
 
 .contededorInferior {
-  width: 500px;
-  margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 450px;
+  justify-content: flex-start;
+  padding: 1rem;
 }
 
-.contededorInferior p {
-  background-color: rgba(0, 0, 0, 0.581);
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
+.tituloHeader {
+  padding-top: 4rem;
+  padding-right: 5rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: left;
   color: white;
 }
 
 .contededorInferiorBotones {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: left;
+  padding-left: 10rem;
 }
 
 .contenedor2 {
@@ -210,10 +305,28 @@ img {
   text-align: center;
 }
 
+.header {
+  background-image: url(../img/senna1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 95vh;
+  position: relative;
+  grid-area: header;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    background-image: url(./img/ayrtonSenna5.jpeg) !important;
+    background-size: cover;
+  }
+  .contededorInferiorBotones {
+    align-items: center;
+  }
+}
 /* button */
 .btnI {
   font-family: "Karla", sans-serif !important;
-  background-color: rgba(0, 0, 0, 0.581);
+  background-color: rgba(0, 0, 0, 0.819);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -229,15 +342,6 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
-}
-
-.header {
-  background-image: url(../img/senna1.jpeg);
-  background-size: cover;
-  background-attachment: fixed;
-  height: 95vh;
-  position: relative;
-  grid-area: header;
 }
 
 /* aside */
@@ -266,23 +370,6 @@ button:active {
   font-weight: bold;
 }
 
-/* CIRCUITOS */
-.circuito {
-  display: grid;
-  grid-template-columns: repeat(3, 8fr);
-}
-
-.imgCircuito {
-  width: 400px;
-  height: auto;
-  margin: 20px;
-}
-
-.centrarImg {
-  text-align: center;
-  margin: 10px;
-}
-
 /* carrusel */
 .carouselExampleIndicators {
   width: 50%;
@@ -292,6 +379,66 @@ button:active {
   display: block;
   margin: auto;
   width: 50%;
+}
+
+/* Circuitos */
+.divicion3 {
+  display: grid;
+  grid-template-columns: repeat(3, 8fr);
+  justify-items: center;
+}
+
+.calendario {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.calendario, img {
+  width: 18rem;
+}
+
+.circuitoH2 {
+  margin: 0rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.circuitoH3 {
+  margin: 0.3rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.texCircuito {
+  text-align: center;
+}
+
+.pCircuito {
+  padding: 0rem;
+  margin-top: 0.5rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.imgBanderas {
+  width: 5rem;
+  display: block;
+  margin: 0 auto;
+}
+
+hr {
+  margin: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .divicion3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

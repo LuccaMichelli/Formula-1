@@ -15,31 +15,34 @@
          <header class="header">
             <nav class="menu">
                 <div class="logo">
-                    <img src="./img/F1Wallpaper.png" alt="Logo">
+                  <img src="./img/F1Wallpaper.png" alt="Logo">
                 </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="calendario.html">Calendario</a></li>
-                    <li class="submenu">
-                        <a href="escuderias.html">Escuderías</a>
-                        <ul class="dropdown">
-                            <li><a href="ferrari.html">Ferrari</a></li>
-                            <li><a href="mercedes.html">Mercedes</a></li>
-                            <li><a href="redbull.html">Red Bull</a></li>
-                            <li><a href="mclaren.html">McLaren</a></li>
-                            <li><a href="astonmartin.html">Aston Martin</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="circuitos.html">Circuitos</a></li>
+              
+                <!-- Botón hamburguesa -->
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+              
+                <ul class="nav-links" id="nav-links">
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="./pages/historia.html">Historia</a></li>
+                  <li><a href="./pages/circuito.html">Circuitos</a></li>
+                  <li class="submenu">
+                    <a href="#">Escuderías</a>
+                    <ul class="dropdown">
+                      <li><a href="ferrari.html">Ferrari</a></li>
+                      <li><a href="mercedes.html">Mercedes</a></li>
+                      <li><a href="redbull.html">Red Bull</a></li>
+                      <li><a href="mclaren.html">McLaren</a></li>
+                      <li><a href="astonmartin.html">Aston Martin</a></li>
+                    </ul>
+                  </li>
                 </ul>
-            </nav>
+              </nav>           
             <div class="contededorInferior">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nobis natus facilis aut id aliquid vitae autem eius explicabo, deserunt consequuntur nemo cumque voluptatem sint dolore nostrum praesentium fuga ducimus?</p>
-                <section class="contededorInferiorBotones">
-                    <button class="btnI"><a href=""></a>Contacto</button> 
-                </section>
+                <h2 class="tituloHeader">Speed, strategy, and adrenaline <br> Welcome to the word of f1</h2>
             </div>
+            <section class="contededorInferiorBotones">
+                <button class="btnI"><a href=""></a>Contacto</button> 
+            </section>
         </header>
         <aside class="aside">
             <div>
@@ -106,5 +109,23 @@
             </div>
         </footer>
     </div>
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const submenu = document.querySelector('.submenu');
+      
+        // Mostrar/ocultar el menú principal
+        toggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+        });
+      
+        // Submenú desplegable solo en móvil
+        submenu.addEventListener('click', function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.classList.toggle('open');
+          }
+        });
+      </script>
 </body>
 </html>
