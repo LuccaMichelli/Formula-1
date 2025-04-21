@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="icon" type="image/png" href="./img/F1Wallpaper.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Hind+Mysuru:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai+Looped&family=Karla:ital,wght@0,200..800;1,200..800&family=Mukta&family=Smooch+Sans:wght@100..900&family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+          <div class="logo">
+            <img src="../img/F1Wallpaper.png" alt="Logo">
+          </div>
+        
+          <!-- Botón hamburguesa -->
+          <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+          <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../pages/historia.html">Historia</a></li>
+            <li><a href="../pages/circuito.html">Circuitos</a></li>
+            <li><a href="../pages/contacto.html">Contacto</a></li>
+            <li class="submenu">
+              <a href="#">Escuderías</a>
+              <ul class="dropdown">
+                <li><a href="ferrari.html">Ferrari</a></li>
+                <li><a href="mercedes.html">Mercedes</a></li>
+                <li><a href="redbull.html">Red Bull</a></li>
+                <li><a href="mclaren.html">McLaren</a></li>
+                <li><a href="astonmartin.html">Aston Martin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+
+      <h1 data-aos="zoom-in-up">Contactanos</h1>
+
+    <form class="formulario">
+    
+        <fieldset>
+        
+            <legend>Contactanos llenando el formularios</legend>
+        
+        <div class="texCenter">
+        
+            <div class="campo">
+                <label>Nombre</label>
+                <input class="input-text" type="text" placeholder="Nombre completo" id="nombre">
+            </div>
+          
+            <div class="campo">
+                <label>Telefono</label>
+                <input class="input-text" type="number" placeholder="Num. de tel." id="telefono">
+            </div>
+          
+            <div class="campo">
+                <label>Correo</label>
+                <input class="input-text" type="email" placeholder="Email" id="email">
+            </div>
+          
+            <div class="campo">
+                <label>Mensaje</label>
+                <textarea class="input-text" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+          
+        </div> <!-- cierre de <div class="contenedorFormulario"> -->      
+        
+        </fieldset>  
+      
+            <div class="alinear">
+                <input class="boton" type="button" value="Enviar" >
+            </div>
+          
+      </form>
+      <script>
+        const toggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const submenu = document.querySelector('.submenu');
+      
+        // Mostrar/ocultar el menú principal
+        toggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+        });
+      
+        // Submenú desplegable solo en móvil
+        submenu.addEventListener('click', function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.classList.toggle('open');
+          }
+        });
+      </script>
+</main>
+</body>
+</html>
